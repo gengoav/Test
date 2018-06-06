@@ -27,7 +27,7 @@
                 </td>
                 <td>
                     @*<input type="button" value=EXPORT onclick="window.location='@Url.Action("Index", "Eqpm", new { criteria = item.equipmentType })'" />*@ 
-                    <input type="button" value=EXPORT onclick="location.href='@Url.Action("CSV",new { GlobCrit = item.equipmentType })'" />
+                    <input type="button" value=EXPORT onclick="location.href='@Url.Action("CSV",new { crit = item.equipmentType })'" />
                 </td>
             </tr>
         }

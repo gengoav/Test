@@ -17,7 +17,7 @@ namespace Zadacha.Controllers
             return View(context.GetAllEqpm(criteria));
         }
 
-        public IActionResult CSV(int GlobCrit)
+        public IActionResult CSV(int crit)
         {
             DbContext context = HttpContext.RequestServices.GetService(typeof(Zadacha.Models.DbContext)) as DbContext;
             var comlumHeadrs = new string[]
@@ -25,7 +25,7 @@ namespace Zadacha.Controllers
                 "Name:"
             };
 
-            var eqpmRec = (from eqpm in context.GetAllEqpm(GlobCrit)
+            var eqpmRec = (from eqpm in context.GetAllEqpm(crit)
                                    select new object[]
                                    {
                                             eqpm.name,                                           
