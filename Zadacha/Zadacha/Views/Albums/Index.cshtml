@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Zadacha.Models.Album>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Selection Screen</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <input type="button" value=@item.Name onclick="window.location='@Url.Action("Index", "Eqpm", new { criteria = item.Id })'" />
+            </td>
+            <td>
+              
+            </td>           
+        </tr>
+}
+    </tbody>
+</table>

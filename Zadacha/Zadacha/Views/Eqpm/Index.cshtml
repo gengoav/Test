@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Zadacha.Models.eqpm>
+
+@{
+    ViewData["Title"] = "List of components";
+}
+
+<h2>List of components</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    <input type="button" value=EXPORT onclick="window.location='@Url.Action("Index", "Eqpm", new { criteria = item.equipmentType })'" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
